@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tv_titre_hl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/douane_temporelle"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <EditText
+        android:id="@+id/et_nom_hl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="" android:hint="@string/nom_du_voyageur"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/et_naissance_hl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="" android:hint="@string/ann_e_de_naissance_ex_1990"
+        android:inputType="number"
+        android:maxLength="4" />
+
+    <EditText
+        android:id="@+id/et_destination_hl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="" android:hint="@string/ann_e_de_destination_ex_2050"
+        android:inputType="number"
+        android:maxLength="4" />
+
+    <TextView
+        android:id="@+id/tv_motif_label_hl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/motif_du_voyage"
+        android:layout_marginTop="16dp" />
+
+    <Spinner
+        android:id="@+id/spinner_motif_hl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/motifs" />
+
+    <Button
+        android:id="@+id/btn_inspecter_hl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/inspecter_le_profil"
+        android:layout_marginTop="24dp" />
+</LinearLayout>
