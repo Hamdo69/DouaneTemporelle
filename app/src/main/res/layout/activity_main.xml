@@ -1,60 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<!-- hadha y5alik tnajem tscrolli wa9t el mo7tewe t3 el display yfout el toul mte3he -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:background="#F3F0E8"
+    android:id="@+id/scroll_main_kh">
 
-    <TextView
-        android:id="@+id/tv_titre_hl"
+    <!-- hadha 3mltou bech el tasmim yjy btoul ya3ny e display yjy btoul mch bl3ordh -->
+    <LinearLayout
+        android:id="@+id/layout_main_kh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/douane_temporelle"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="24dp" />
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <EditText
-        android:id="@+id/et_nom_hl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints="" android:hint="@string/nom_du_voyageur"
-        android:inputType="textPersonName" />
+        <!-- hadha mt3 nas t3 el display -->
+        <!-- awel wa7da ely hye louta direct t3 el esm t3 ediwene ya3ny esm el app -->
+        <TextView
+            android:id="@+id/txt_title_kh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DOUANE TEMPORELLE (TIME TRAVEL CUSTOMS)"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="#26364A"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
 
-    <EditText
-        android:id="@+id/et_naissance_hl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints="" android:hint="@string/ann_e_de_naissance_ex_1990"
-        android:inputType="number"
-        android:maxLength="4" />
+        <!-- hedhy t3 nas t3 el display t3 lactivité loule win ysajel el traveller rou7ou -->
+        <TextView
+            android:id="@+id/txt_subtitle_kh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TRAVELLER REGISTRATION"
+            android:textSize="15sp"
+            android:textColor="#68788A"
+            android:gravity="center"
+            android:layout_marginBottom="30dp"/>
 
-    <EditText
-        android:id="@+id/et_destination_hl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints="" android:hint="@string/ann_e_de_destination_ex_2050"
-        android:inputType="number"
-        android:maxLength="4" />
+        <!-- hadha nas t3 esm etraveller -->
+        <TextView
+            android:id="@+id/txt_nom_kh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nom"
+            android:textStyle="bold"
+            android:textColor="#26364A"/>
 
-    <TextView
-        android:id="@+id/tv_motif_label_hl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/motif_du_voyage"
-        android:layout_marginTop="16dp" />
+        <!--- hedhy el configuration ely t5ali el traveller ynjm yktb esmou -->
+        <EditText
+            android:id="@+id/edt_nom_kh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your full name"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="18dp"/>
+        android:minHeight="48dp"
 
-    <Spinner
-        android:id="@+id/spinner_motif_hl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/motifs" />
+        <!-- hedhy t3 3omrou (mich el config eme el display t3 3oumrou) -->
+        <TextView
+            android:id="@+id/txt_naissance_kh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Année de naissance"
+            android:textStyle="bold"
+            android:textColor="#26364A"/>
 
-    <Button
-        android:id="@+id/btn_inspecter_hl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/inspecter_le_profil"
-        android:layout_marginTop="24dp" />
-</LinearLayout>
+        <!-- hedhy hye el config t3 3omrou -->
+        <EditText
+            android:id="@+id/edt_naissance_kh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ex: 2000"
+            android:inputType="number"
+            android:layout_marginBottom="18dp"/>
+        android:minHeight="48dp"
+
+        <!-- hedhy e display t3 el 3am ely bch ymchilou -->
+        <TextView
+            android:id="@+id/txt_destination_kh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Année de destination"
+            android:textStyle="bold"
+            android:textColor="#26364A"/>
+
+        <!-- hedhy el config t3 el 3am ely t5alih ynajem yda5el el 3am ely bch yo9sed raby lih -->
+        <EditText
+            android:id="@+id/edt_destination_kh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ex: 2050"
+            android:inputType="number"
+            android:layout_marginBottom="22dp"/>
+        android:minHeight="48dp"
+
+        <!-- hedhy el to3rdh esbb ely y5alih ysefer -->
+        <TextView
+            android:id="@+id/txt_motif_kh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Motif"
+            android:textStyle="bold"
+            android:textColor="#26364A"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- hedhy win jma3na el buttonet lkoul m3a b3adhhom -->
+        <RadioGroup
+            android:id="@+id/radio_motif_kh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- hne el button t3 sbb el tourisme wa7dou -->
+            <RadioButton
+                android:id="@+id/rb_tourisme_kh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tourisme"/>
+
+            <!-- hne t3 el button t3 sbb el y7b ybdel el madhy (bhim mechy fybelou ynajem ybdel el madhy mnghir me ytbdel el mosta9bel o l7adher) -->
+            <RadioButton
+                android:id="@+id/rb_passe_kh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Modification du passé"/>
+
+            <!-- hne el sbb t3 el fuit (jortou rechercher wala chbih raby y5ales wa7lek a 7ouma) -->
+            <RadioButton
+                android:id="@+id/rb_fuite_kh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fuite"/>
+
+        </RadioGroup>
+
+        <!-- hne el button t" esubmit -->
+        <Button
+            android:id="@+id/btn_inspecter_kh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inspecter"
+            android:layout_marginTop="25dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
