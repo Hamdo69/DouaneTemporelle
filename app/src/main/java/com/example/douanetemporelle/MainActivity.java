@@ -1,75 +1,84 @@
-package com.example.douanetemporelle;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
+package com.example.douanetemporelle;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.RadioGroup;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import DouaneTemporelle.cles;
-
 public class MainActivity extends AppCompatActivity {
 
-    // 1.numero l inscription
-    public static final String MATRICULE = "1234";
+    // Les composants de l'interface
+    private EditText edtNom;
+    private EditText edtNaissance;
+    private EditText edtDestination;
 
-    EditText etNom, etNaissance, etDestination;
-    Spinner spinnerMotif;
-    Button btnInspecter;
-    private cles Cles;
+    private RadioGroup radioMotif;
+    private Button btnInspecter;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
-        // 2. torbet les donnees b interface
-        etNom = findViewById(R.id.et_nom_hl);
-        etNaissance = findViewById(R.id.et_naissance_hl);
-        etDestination = findViewById(R.id.et_destination_hl);
-        spinnerMotif = findViewById(R.id.spinner_motif_hl);
-        btnInspecter = findViewById(R.id.btn_inspecter_hl);
+        edtNom = findViewById(R.id.edt_nom_kh);
+        edtNaissance = findViewById(R.id.edt_naissance_kh);
+        edtDestination = findViewById(R.id.edt_destination_kh);
 
-        // 3.ki tenzel al button
+        radioMotif = findViewById(R.id.radio_motif_kh);
+        btnInspecter = findViewById(R.id.btn_inspecter_kh);
+
         btnInspecter.setOnClickListener(v -> {
-            String nom = etNom.getText().toString().trim();
-            String naissanceStr = etNaissance.getText().toString().trim();
-            String destinationStr = etDestination.getText().toString().trim();
-            String motif = spinnerMotif.getSelectedItem().toString();
 
-            // 4. tetaked eli les champs mch ferghin
+            String nom = edtNom.getText().toString().trim();
+            String naissanceStr = edtNaissance.getText().toString().trim();
+            String destinationStr = edtDestination.getText().toString().trim();
+
+            // 2. Vérification des champs vides
             if (nom.isEmpty() || naissanceStr.isEmpty() || destinationStr.isEmpty()) {
-                Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,
+                        "Veuillez remplir tous les champs",
+                        Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            int naissance = Integer.parseInt(naissanceStr);
-            int destination = Integer.parseInt(destinationStr);
+            int selectedId = radioMotif.getCheckedRadioButtonId(); //bech traja3 el ID t3 el button ely 5tarou el traveller
 
-            // 5. tetaked eli aawem logique walle
-            if (destination <= naissance) {
-                Toast.makeText(this, "L'année de destination doit être après la naissance", Toast.LENGTH_SHORT).show();
+            if (selectedId == -1) { //hne law fardhna enou 3ml inspecter mnghir me y5tar 7ata sbb
+                Toast.makeText(this,
+                        "Veuillez choisir un motif de voyage",
+                        Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            // 6. Intent explicite bech nhelou l’activité thenia
-            Intent intent = new Intent(MainActivity.this, VerificationActivity .class);
+            RadioButton selectedRadio = findViewById(selectedId); //bhedhy najmou nouslou ll button ely e5tarou
+            String motif = selectedRadio.getText().toString(); // w bgetText() bch na9rou chnwe hwe el e5tyar
 
-            // 7. nabathou les donnes b cles
-            intent.putExtra(Cles.cle(MATRICULE, "NOM_VOYAGEUR"), nom);
-            intent.putExtra(Cles.cle(MATRICULE, "ANNEE_NAISSANCE"), naissance);
-            intent.putExtra(Cles.cle(MATRICULE, "ANNEE_DESTINATION"), destination);
-            intent.putExtra(Cles.cle(MATRICULE, "MOTIF"), motif);
+            try { //btbi3e lesmne nst3mlou try/catch bch ysyrch tomb llapp edhe ken ra9em ely l9ineh b3d me 3mlne parseInt invalide wala 7aja
+                int naissance = Integer.parseInt(naissanceStr);
+                int destination = Integer.parseInt(destinationStr);
 
-            startActivity(intent);
+                if (destination <= naissance) {
+                    Toast.makeText(this,
+                            "L'année de destination doit être après la naissance",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Les données sont valides
+                Toast.makeText(this,
+                        "Profil valide : " + nom + " - " + motif,
+                        Toast.LENGTH_LONG).show();
+
+            } catch (NumberFormatException e) {
+                Toast.makeText(this,
+                        "Veuillez saisir des années valides",
+                        Toast.LENGTH_SHORT).show();
+            }
         });
-    }
-
-    private class VerificationActivity {
     }
 }
