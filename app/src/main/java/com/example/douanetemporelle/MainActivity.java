@@ -1,4 +1,3 @@
-
 package com.example.douanetemporelle;
 import android.os.Bundle;
 import android.widget.Button;
@@ -6,12 +5,12 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.RadioButton;
 import android.widget.Toast;
+import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Les composants de l'interface
     private EditText edtNom;
     private EditText edtNaissance;
     private EditText edtDestination;
@@ -69,10 +68,17 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                // Les données sont valides
-                Toast.makeText(this,
-                        "Profil valide : " + nom + " - " + motif,
-                        Toast.LENGTH_LONG).show();
+                // naa3mlou intent t3adina mn el mainActivity ll verificationActivity
+
+                Intent intent = new Intent(MainActivity.this, VerificationActivity.class);
+
+                intent.putExtra(Intentkeys.getKey("7011", "NOM_VOYAGEUR"), nom);
+                intent.putExtra(Intentkeys.getKey("7011", "ANNEE_NAISSANCE"), naissance);
+                intent.putExtra(Intentkeys.getKey("7011", "ANNEE_DESTINATION"), destination);
+                intent.putExtra(Intentkeys.getKey("7011", "MOTIF"), motif);
+
+                //bhedhy bch yt7l el activité e theny
+                startActivity(intent);
 
             } catch (NumberFormatException e) {
                 Toast.makeText(this,
