@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.widget.Button;
 public class VerificationActivity extends AppCompatActivity {
 
     private TextView txtNom;
     private TextView txtAge;
     private TextView txtMotif;
+    private Button btnApprouver;
+    private Button btnRefuser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,9 @@ public class VerificationActivity extends AppCompatActivity {
         txtNom = findViewById(R.id.txt_nom_value_kh);
         txtAge = findViewById(R.id.txt_age_value_kh);
         txtMotif = findViewById(R.id.txt_motif_value_kh);
+
+        btnApprouver = findViewById(R.id.btn_approuver_kh);
+        btnRefuser = findViewById(R.id.btn_refuser_kh);
 
         // hne lest9bel t3 el intent
         Intent intent = getIntent();
@@ -46,5 +51,26 @@ public class VerificationActivity extends AppCompatActivity {
         txtNom.setText(nom);
         txtAge.setText(age + " ans");
         txtMotif.setText(motif);
+
+        //hne n3aytou llfonction isPrime() o nzydou nchoufou ely el motif hwe el fas3a llmadhy o tabdilou edhe ken zouz 7ejet hedhom t7a9a9ou donc na3mlou disabled ll button approuver b setEnable()
+        if (motif.equals("Modification du passé") && isPrime(age)) {
+            btnApprouver.setEnabled(false);
+        }
+    }
+
+    //hne el fonction isPrime
+    private boolean isPrime(int n) {
+
+        if (n <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
