@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#F5F0E6"
+    android:background="@drawable/temporal_bg"
     tools:context=".VerificationActivity">
 
     <LinearLayout
@@ -15,7 +15,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@drawable/bg_form_panel"
+        android:padding="12dp">
 
         <ImageView
             android:id="@+id/img_passport_kh"
@@ -24,7 +26,9 @@
             android:layout_weight="0.3"
             android:contentDescription="Image du passeport temporel"
             android:scaleType="centerCrop"
-            android:src="@android:drawable/ic_menu_gallery" />
+            android:background="@drawable/bg_passport_image"
+            android:padding="2dp"
+            android:src="@drawable/temporal_passport" />
 
         <RelativeLayout
             android:id="@+id/layout_info_kh"
@@ -33,35 +37,63 @@
             android:layout_weight="0.7"
             android:padding="12dp">
 
+
+            <TextView
+                android:id="@+id/txt_authority_passport_kh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="T.C.A. // DOCUMENT 002"
+                android:textSize="9sp"
+                android:textColor="@color/tc_stamp"
+                android:fontFamily="@font/ibm_plex_mono"
+                android:gravity="center"
+                android:letterSpacing="0.05"/>
+
             <TextView
                 android:id="@+id/txt_passport_title_kh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TEMPORAL PASSPORT"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#6B3F2A"
+                android:textColor="@color/tc_text"
+                android:fontFamily="@font/ibm_plex_mono"
+                android:letterSpacing="0.04"
                 android:gravity="center"
-                android:layout_marginBottom="24dp" />
+                android:layout_below="@id/txt_authority_passport_kh"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp"/>
+
+
+            <View
+                android:id="@+id/view_passport_divider_kh"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/tc_border"
+                android:layout_below="@id/txt_passport_title_kh"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"/>
 
             <TextView
                 android:id="@+id/txt_nom_label_kh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NOM DU VOYAGEUR"
-                android:textSize="12sp"
+                android:text="01 / TRAVELLER IDENTITY"
+                android:textSize="11sp"
                 android:textStyle="bold"
-                android:textColor="#777777"
-                android:layout_below="@id/txt_passport_title_kh" />
+                android:textColor="@color/tc_green_dark"
+                android:fontFamily="@font/ibm_plex_mono"
+                android:letterSpacing="0.04"
+                android:layout_below="@id/view_passport_divider_kh"/>
 
             <TextView
                 android:id="@+id/txt_nom_value_kh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nom du voyageur"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#222222"
+                android:textColor="@color/tc_text"
+                android:fontFamily="@font/ibm_plex_mono"
                 android:layout_below="@id/txt_nom_label_kh"
                 android:layout_marginTop="4dp" />
 
@@ -69,10 +101,12 @@
                 android:id="@+id/txt_age_label_kh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="AGE À DESTINATION"
-                android:textSize="12sp"
+                android:text="02 / AGE AT DESTINATION"
+                android:textSize="11sp"
                 android:textStyle="bold"
-                android:textColor="#777777"
+                android:textColor="@color/tc_green_dark"
+                android:fontFamily="@font/ibm_plex_mono"
+                android:letterSpacing="0.04"
                 android:layout_below="@id/txt_nom_value_kh"
                 android:layout_marginTop="20dp" />
 
@@ -80,10 +114,10 @@
                 android:id="@+id/txt_age_value_kh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="00 ans"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#222222"
+                android:textColor="@color/tc_text"
+                android:fontFamily="@font/ibm_plex_mono"
                 android:layout_below="@id/txt_age_label_kh"
                 android:layout_marginTop="4dp" />
 
@@ -91,10 +125,12 @@
                 android:id="@+id/txt_motif_label_kh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MOTIF DU VOYAGE"
-                android:textSize="12sp"
+                android:text="03 / TRAVEL AUTHORIZATION"
+                android:textSize="11sp"
                 android:textStyle="bold"
-                android:textColor="#777777"
+                android:textColor="@color/tc_green_dark"
+                android:fontFamily="@font/ibm_plex_mono"
+                android:letterSpacing="0.04"
                 android:layout_below="@id/txt_age_value_kh"
                 android:layout_marginTop="20dp" />
 
@@ -102,9 +138,9 @@
                 android:id="@+id/txt_motif_value_kh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Motif"
-                android:textSize="16sp"
-                android:textColor="#222222"
+                android:textSize="14sp"
+                android:textColor="@color/tc_text"
+                android:fontFamily="@font/ibm_plex_mono"
                 android:layout_below="@id/txt_motif_label_kh"
                 android:layout_marginTop="4dp" />
 
@@ -112,18 +148,34 @@
     </LinearLayout>
 
     <!-- el buttons mt3 decision -->
+
     <Button
         android:id="@+id/btn_approuver_kh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Approuver le saut temporel"
-        android:layout_marginTop="12dp" />
+        android:text="APPROUVER: TEMPORAL JUMP"
+        android:background="@drawable/bg_button_inspect"
+        android:textColor="@color/tc_background"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/ibm_plex_mono"
+        android:letterSpacing="0.03"
+        android:padding="12dp"
+        android:layout_marginTop="12dp"/>
+
 
     <Button
         android:id="@+id/btn_refuser_kh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Refuser (Risque de paradoxe)"
-        android:layout_marginTop="8dp" />
+        android:text="REFUSER — PARADOX RISK"
+        android:background="@drawable/bg_button_refuse"
+        android:textColor="@color/tc_background"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/ibm_plex_mono"
+        android:letterSpacing="0.03"
+        android:padding="12dp"
+        android:layout_marginTop="8dp"/>
 
 </LinearLayout>

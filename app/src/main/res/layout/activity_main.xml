@@ -4,7 +4,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3F0E8"
+    android:background="@drawable/temporal_bg"
     android:id="@+id/scroll_main_kh">
 
     <!-- hadha 3mltou bech el tasmim yjy btoul ya3ny e display yjy btoul mch bl3ordh -->
@@ -13,20 +13,67 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="24dp"
+        android:background="@drawable/bg_form_panel"
+        android:layout_margin="10dp"
+        android:elevation="4dp">
 
         <!-- hadha mt3 nas t3 el display -->
         <!-- awel wa7da ely hye louta direct t3 el esm t3 ediwene ya3ny esm el app -->
+
+        <TextView
+            android:id="@+id/txt_authority_kh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="T.C.A. // TEMPORAL CONTROL AUTHORITY"
+            android:textSize="11sp"
+            android:textColor="@color/tc_text_secondary"
+            android:fontFamily="@font/ibm_plex_mono"
+            android:gravity="center"
+            android:letterSpacing="0.08"
+            android:layout_marginBottom="16dp"/>
+
         <TextView
             android:id="@+id/txt_title_kh"
+            android:fontFamily="@font/ibm_plex_mono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="DOUANE TEMPORELLE (TIME TRAVEL CUSTOMS)"
             android:textSize="25sp"
             android:textStyle="bold"
-            android:textColor="#26364A"
+            android:textColor="@color/tc_text"
             android:gravity="center"
             android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/txt_dossier_kh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DOSSIER Nº 7011  //  FORM 001"
+            android:textSize="11sp"
+            android:textColor="@color/tc_stamp"
+            android:fontFamily="@font/ibm_plex_mono"
+            android:gravity="center"
+            android:letterSpacing="0.05"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp"/>
+
+
+        <TextView
+            android:id="@+id/txt_stamp_kh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEMPORAL ACCESS — AUTHORIZED"
+            android:textColor="@color/tc_stamp"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/ibm_plex_mono"
+            android:letterSpacing="0.04"
+            android:gravity="center"
+            android:background="@drawable/bg_stamp"
+            android:rotation="-2"
+            android:layout_gravity="center"
+            android:layout_marginBottom="18dp"/>
 
         <!-- hedhy t3 nas t3 el display t3 lactivité loule win ysajel el traveller rou7ou -->
         <TextView
@@ -39,14 +86,38 @@
             android:gravity="center"
             android:layout_marginBottom="30dp"/>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/tc_border"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/txt_section_identity_kh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="// 01 — TRAVELLER IDENTITY"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/tc_green_dark"
+            android:fontFamily="@font/ibm_plex_mono"
+            android:letterSpacing="0.06"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="18dp"/>
+
         <!-- hadha nas t3 esm etraveller -->
         <TextView
             android:id="@+id/txt_nom_kh"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nom"
+            android:text="01 / TRAVELLER NAME"
+            android:textSize="12sp"
             android:textStyle="bold"
-            android:textColor="#26364A"/>
+            android:textColor="@color/tc_green_dark"
+            android:fontFamily="@font/ibm_plex_mono"
+            android:letterSpacing="0.05"
+            android:layout_marginBottom="8dp"/>
 
         <!--- hedhy el configuration ely t5ali el traveller ynjm yktb esmou -->
         <EditText
@@ -54,18 +125,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your full name"
+            android:minHeight="48dp"
             android:inputType="textPersonName"
-            android:layout_marginBottom="18dp"/>
-        android:minHeight="48dp"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/bg_input_field"
+            android:textColor="@color/tc_text"
+            android:textColorHint="@color/tc_text_secondary"
+            android:fontFamily="@font/ibm_plex_mono"/>
 
         <!-- hedhy t3 3omrou (mich el config eme el display t3 3oumrou) -->
         <TextView
             android:id="@+id/txt_naissance_kh"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Année de naissance"
+            android:text="02 / YEAR OF ORIGIN"
+            android:textSize="12sp"
             android:textStyle="bold"
-            android:textColor="#26364A"/>
+            android:textColor="@color/tc_green_dark"
+            android:fontFamily="@font/ibm_plex_mono"
+            android:letterSpacing="0.05"
+            android:layout_marginBottom="8dp"/>
 
         <!-- hedhy hye el config t3 3omrou -->
         <EditText
@@ -73,18 +152,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ex: 2000"
+            android:minHeight="48dp"
             android:inputType="number"
-            android:layout_marginBottom="18dp"/>
-        android:minHeight="48dp"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/bg_input_field"
+            android:textColor="@color/tc_text"
+            android:textColorHint="@color/tc_text_secondary"
+            android:fontFamily="@font/ibm_plex_mono"/>
 
         <!-- hedhy e display t3 el 3am ely bch ymchilou -->
         <TextView
             android:id="@+id/txt_destination_kh"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Année de destination"
+            android:text="03 / TEMPORAL DESTINATION"
+            android:textSize="12sp"
             android:textStyle="bold"
-            android:textColor="#26364A"/>
+            android:textColor="@color/tc_green_dark"
+            android:fontFamily="@font/ibm_plex_mono"
+            android:letterSpacing="0.05"
+            android:layout_marginBottom="8dp"/>
 
         <!-- hedhy el config t3 el 3am ely t5alih ynajem yda5el el 3am ely bch yo9sed raby lih -->
         <EditText
@@ -92,19 +179,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ex: 2050"
+            android:minHeight="48dp"
             android:inputType="number"
-            android:layout_marginBottom="22dp"/>
-        android:minHeight="48dp"
+            android:layout_marginBottom="22dp"
+            android:background="@drawable/bg_input_field"
+            android:textColor="@color/tc_text"
+            android:textColorHint="@color/tc_text_secondary"
+            android:fontFamily="@font/ibm_plex_mono"/>
 
         <!-- hedhy el to3rdh esbb ely y5alih ysefer -->
         <TextView
             android:id="@+id/txt_motif_kh"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Motif"
+            android:text="04 / AUTHORIZED TRAVEL PURPOSE"
             android:textStyle="bold"
-            android:textColor="#26364A"
-            android:layout_marginBottom="8dp"/>
+            android:textSize="12sp"
+            android:textColor="@color/tc_green_dark"
+            android:fontFamily="@font/ibm_plex_mono"
+            android:letterSpacing="0.05"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="12dp"/>
 
         <!-- hedhy win jma3na el buttonet lkoul m3a b3adhhom -->
         <RadioGroup
@@ -118,30 +213,59 @@
                 android:id="@+id/rb_tourisme_kh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tourisme"/>
+                android:text="Tourisme"
+                android:buttonTint="@color/tc_green_dark"
+                android:textColor="@color/tc_text"
+                android:textSize="14sp"
+                android:fontFamily="@font/ibm_plex_mono"
+                android:padding="8dp"/>
 
             <!-- hne t3 el button t3 sbb el y7b ybdel el madhy (bhim mechy fybelou ynajem ybdel el madhy mnghir me ytbdel el mosta9bel o l7adher) -->
             <RadioButton
                 android:id="@+id/rb_passe_kh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Modification du passé"/>
+                android:text="Modification du passé"
+                android:buttonTint="@color/tc_green_dark"
+                android:textColor="@color/tc_text"
+                android:textSize="14sp"
+                android:fontFamily="@font/ibm_plex_mono"
+                android:padding="8dp"/>
 
             <!-- hne el sbb t3 el fuit (jortou rechercher wala chbih raby y5ales wa7lek a 7ouma) -->
             <RadioButton
                 android:id="@+id/rb_fuite_kh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fuite"/>
+                android:text="Fuite"
+                android:buttonTint="@color/tc_green_dark"
+                android:textColor="@color/tc_text"
+                android:textSize="14sp"
+                android:fontFamily="@font/ibm_plex_mono"
+                android:padding="8dp"/>
 
         </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/tc_border"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
 
         <!-- hne el button t3 esubmit -->
         <Button
             android:id="@+id/btn_inspecter_kh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Inspecter"
+            android:background="@drawable/bg_button_inspect"
+            android:text="INSPECTER LE PROFIL"
+            android:textColor="@color/tc_background"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/ibm_plex_mono"
+            android:letterSpacing="0.06"
+            android:padding="12dp"
             android:layout_marginTop="25dp"/>
 
     </LinearLayout>

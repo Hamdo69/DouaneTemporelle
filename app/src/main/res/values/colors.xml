@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="tc_background">#E5E0D2</color>
+    <color name="tc_paper">#D6D0BF</color>
+    <color name="tc_surface">#C5BEAA</color>
+
+    <color name="tc_text">#252923</color>
+    <color name="tc_text_secondary">#66695D</color>
+
+    <color name="tc_green">#66785A</color>
+    <color name="tc_green_dark">#354632</color>
+    <color name="tc_red">#963D35</color>
+    <color name="tc_red_dark">#642923</color>
+
+    <color name="tc_border">#8E8979</color>
+    <color name="tc_stamp">#A34439</color>
+
 </resources>
