@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             String naissanceStr = edtNaissance.getText().toString().trim();
             String destinationStr = edtDestination.getText().toString().trim();
 
-            // 2. Vérification des champs vides
+            //hne bch nverifiou el les champs farghin
             if (nom.isEmpty() || naissanceStr.isEmpty() || destinationStr.isEmpty()) {
                 Toast.makeText(this,
                         "Veuillez remplir tous les champs",

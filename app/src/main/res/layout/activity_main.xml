@@ -136,7 +136,7 @@
 
         </RadioGroup>
 
-        <!-- hne el button t" esubmit -->
+        <!-- hne el button t3 esubmit -->
         <Button
             android:id="@+id/btn_inspecter_kh"
             android:layout_width="match_parent"

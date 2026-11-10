@@ -10,7 +10,6 @@
     android:background="#F5F0E6"
     tools:context=".VerificationActivity">
 
-    <!-- Partie supérieure : Image + Informations -->
     <LinearLayout
         android:id="@+id/layout_passport_kh"
         android:layout_width="match_parent"
@@ -112,7 +111,7 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <!-- Boutons de décision -->
+    <!-- el buttons mt3 decision -->
     <Button
         android:id="@+id/btn_approuver_kh"
         android:layout_width="match_parent"
