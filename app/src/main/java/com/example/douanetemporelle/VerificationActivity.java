@@ -56,6 +56,14 @@ public class VerificationActivity extends AppCompatActivity {
         if (motif.equals("Modification du passé") && isPrime(age)) {
             btnApprouver.setEnabled(false);
         }
+
+        btnApprouver.setOnClickListener(v -> {
+            envoyerResultat(true, nom);
+        });
+
+        btnRefuser.setOnClickListener(v -> {
+            envoyerResultat(false, nom);
+        });
     }
 
     //hne el fonction isPrime
@@ -72,5 +80,28 @@ public class VerificationActivity extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    //el envoyerResultat() bch te5ou zouz parameters el verdict o hwe e decision t3 el approuver (true wala false) o te5ou e nom t3 e traveller
+    private void envoyerResultat(boolean verdict, String nom) {
+
+        //hne bch ta3mel intent jdid l ResultActivity
+        Intent intent = new Intent(
+                VerificationActivity.this,
+                ResultActivity.class
+        );
+
+        //o bputExtra() bch tab3eth el 2 valeurs el verdict o el clé
+        intent.putExtra(
+                Intentkeys.getKey("7011", "VERDICT"),
+                verdict
+        );
+
+        intent.putExtra(
+                Intentkeys.getKey("7011", "NOM_VOYAGEUR"),
+                nom
+        );
+
+        startActivity(intent);
     }
 }
