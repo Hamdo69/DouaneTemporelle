@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- hedhy el contenera el principal -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_result_kh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#F5F0E6">
+
+    <!-- hedhe e titre -->
+    <TextView
+        android:id="@+id/txt_result_title_kh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEMPORAL CUSTOMS"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#252525"
+        android:layout_marginBottom="30dp" />
+
+    <!-- hedhe el message t3 el decision -->
+    <TextView
+        android:id="@+id/txt_result_message_kh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Résultat du contrôle"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#252525"
+        android:gravity="center"
+        android:layout_marginBottom="40dp" />
+
+    <!-- hedhe el button ely bch yrja3na ll debut t3 el app -->
+    <Button
+        android:id="@+id/btn_nouveau_voyageur_kh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nouveau voyageur" />
+
+</LinearLayout>
